@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox fx:controller="Application.Controller" style="-fx-background-color: #406684;" xmlns:fx="http://javafx.com/fxml">
+    <MenuBar style="-fx-background-color: #AEC6CF;">
+        <Menu text="File">
+            <MenuItem onAction="#openImage" text="Open" />
+        </Menu>
+        <Menu text="Edit">
+            <MenuItem onAction="#undoLastSelection" text="Undo" />
+            <MenuItem onAction="#resetSelections" text="Reset Selections" />
+            <MenuItem onAction="#superimposeRectangles" text="Superimpose Rectangles" />
+        </Menu>
+        <Menu text="Convert">
+            <MenuItem text="Refine Image" onAction="#refineImage" />
+            <MenuItem text="Colour Sets" onAction="#displayColoredImage" />
+            <MenuItem text="Randomly Colour Sets" onAction="#randomlyColoredImage" />
+        </Menu>
+        <Menu text="Prints">
+            <MenuItem onAction="#printDisjointSets" text="Disjoint Sets" />
+            <MenuItem onAction="#printUnionFindResults" text="Union Results" />
+            <MenuItem onAction="#printBoundarySets" text="Boundary Results" />
+            <MenuItem onAction="#printSizesOfDisjointSetsInRectangles" text="Rectangle Sizes" />
+            <MenuItem onAction="#printRectangleNames" text="Rectangle Names" />
+            <MenuItem onAction="#printRectangleNamesAndSizes" text="Rectangle Names and Sizes" />
+        </Menu>
+        <Menu text="Exit">
+            <MenuItem onAction="#Exit" text="Exit" />
+        </Menu>
+    </MenuBar>
+    <HBox style="-fx-padding: 10;" spacing="10">
+        <TabPane fx:id="tabPane" style="-fx-background-color: #AEC6CF;">
+            <Tab text="Original Image">
+                <content>
+                    <AnchorPane>
+                        <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+                    </AnchorPane>
+                </content>
+            </Tab>
+        </TabPane>
+        <ListView fx:id="listView" style="-fx-background-color: #AEC6CF;"/>
+    </HBox>
+    <Separator style="-fx-padding: 10;" />
+    <VBox style="-fx-padding: 10;" spacing="10">
+        <HBox spacing="10">
+            <TextField fx:id="pillNameField" promptText="Oxycodone" />
+            <Label text="Name" style="-fx-text-fill: white;"/>
+            <TextField fx:id="colorThresholdField" promptText="0.09" />
+            <Label text="Colour Threshold" style="-fx-text-fill: white;"/>
+            <TextField fx:id="minSizeField" promptText="300" />
+            <Label text="Min Size" style="-fx-text-fill: white;"/>
+            <TextField fx:id="maxSizeField" promptText="1000" />
+            <Label text="Max Size" style="-fx-text-fill: white;"/>
+        </HBox>
+    </VBox>
+    <Separator style="-fx-padding: 10;" />
+    <VBox style="-fx-padding: 10;" spacing="10">
+        <HBox spacing="10">
+            <Slider fx:id="hueAdjustmentFactorSlider" min="0" max="1" value="0.0" showTickLabels="true" showTickMarks="true" />
+            <Label text="Hue Adjustment" style="-fx-text-fill: white;"/>
+            <Slider fx:id="saturationFactorSlider" min="0" max="1" value="0.9" showTickLabels="true" showTickMarks="true" />
+            <Label text="Saturation Factor" style="-fx-text-fill: white;"/>
+            <Slider fx:id="brightnessFactorSlider" min="0" max="2" value="1.2" showTickLabels="true" showTickMarks="true" />
+            <Label text="Brightness Factor" style="-fx-text-fill: white;"/>
+        </HBox>
+        <HBox>
+            <Button onAction="#onConvertButtonClick" text="Convert" style="-fx-background-color: #33b3a6; -fx-text-fill: white; -fx-font-size: 14px;" />
+        </HBox>
+    </VBox>
+    <Separator style="-fx-padding: 10;" />
+    <VBox style="-fx-padding: 10;" spacing="10">
+        <HBox spacing="10">
+            <TextField fx:id="rescaleWidthField" promptText="128" />
+            <Label text="Width Adjustment" style="-fx-text-fill: white;"/>
+            <TextField fx:id="rescaleHeightField" promptText="128" />
+            <Label text="Height Adjustment" style="-fx-text-fill: white;" />
+        </HBox>
+        <HBox spacing="10">
+            <Button onAction="#rescaleImage" text="Rescale" style="-fx-background-color: #33b3a6; -fx-text-fill: white; -fx-font-size: 14px;" />
+            <Button fx:id="resetButton" onAction="#resetImageScale" text="Revert" style="-fx-background-color: #33b3a6; -fx-text-fill: white; -fx-font-size: 14px;" />
+        </HBox>
+    </VBox>
+    <Separator style="-fx-padding: 10;" />
+    <VBox style="-fx-padding: 10;" spacing="10">
+        <HBox spacing="10">
+            <TextField fx:id="pillNameInput" promptText="Oxycodone" />
+            <Button text="Highlight Pill" onAction="#highlightPill" style="-fx-background-color: #33b3a6; -fx-text-fill: white; -fx-font-size: 14px;" />
+            <CheckBox fx:id="checkBox" text="Toggle Numbers" style="-fx-text-fill: white;"/>
+        </HBox>
+    </VBox>
+</VBox>

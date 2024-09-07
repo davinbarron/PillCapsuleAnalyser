@@ -1,0 +1,14 @@
+Sorting:
+https://www.freecodecamp.org/news/how-to-sort-a-list-in-java/#:~:text=One%20of%20the%20most%20common,in%20ascending%20order%20by%20default.&text=The%20above%20code%20creates%20a,sorted%20list%20to%20the%20console.
+
+Testing:
+https://www.tutorialspoint.com/mockito/index.htm
+
+Benchmarking:
+https://plugins.jetbrains.com/plugin/7529-jmh-java-microbenchmark-harness
+https://stackoverflow.com/questions/38056899/jmh-unable-to-find-the-resource-meta-inf-benchmarklist
+https://stackoverflow.com/questions/40311990/run-jmh-benchmark-under-eclipse/40748670#40748670
+
+Others:
+https://docs.oracle.com/javase/8/javafx/api/javafx/scene/text/Text.html
+https://github.com/williamfiset/algorithms
